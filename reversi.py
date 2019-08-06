@@ -31,25 +31,44 @@ def main():
         name2 = input("Please enter name of Player 2: ")
         player2 = Player("white", name2)
     else:
-        player2 = CPUPlayer("white", "CPU")
+        player2 = CPUPlayer(board)
 
     while True:
         if board.turn == "p1":
             if not board.valid_move_exists("black"):
                 print("No valid moves!")
-                board.turn == "p2"
-                continue
+                if board.valid_move_exists("white"):
+                    board.turn == "p2"
+                    continue
+                else:
+                    break
+            print("Player 1:")
             board.get_move(player1)
             board.display_board()
             board.next_turn()
         else:
             if not board.valid_move_exists("white"):
                 print("No valid moves!")
-                board.turn == "p1"
-                continue
+                if board.valid_move_exists("black"):
+                    board.turn == "p1"
+                    continue
+                else:
+                    break
+            print("Player 2:")
             board.get_move(player2)
             board.display_board()
             board.next_turn()
+
+    score = board.final_score()
+    if score == 0:
+        print("tied")
+    elif score < 0:
+        player2.wins(score)
+    else:
+        player1.wins(score)
+
+
+
 
 
 

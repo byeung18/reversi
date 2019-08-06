@@ -111,12 +111,12 @@ class Board:
         else:
             self.turn = "p1"
 
+    def final_score(self):
+        return sum(sum(self.board[i]) for i in range(self.dimension))
 
-
-
-
-
-
+    # def play_again(self):
+    #     print("Press 'y' to play again")
+    #     return input().lower() == 'y'
 
 
 
