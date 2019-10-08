@@ -5,7 +5,6 @@ from board import *
 def main():
     """
     Reversi game interface.
-    :return:
     """
     num_players = 0
     while num_players != 1 and num_players != 2:
@@ -66,30 +65,6 @@ def main():
         player2.wins(score)
     else:
         player1.wins(score)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 if __name__ == '__main__':

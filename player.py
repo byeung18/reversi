@@ -11,7 +11,7 @@ class Player:
         self.id = name
 
     def choose_move(self) -> Tuple[int, int, str]:
-        move_x, move_y = 0, 0
+        move_x, move_y = -1, -1
         try:
             move_x = int(input("choose x_coordinate: "))
             move_y = int(input("choose y_coordinate: "))
